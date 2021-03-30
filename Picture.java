@@ -381,12 +381,8 @@ public class Picture
       //for loop for every pixel in the row
       for (int j = 0; j <  pixels[i].length; j++)
       {
-        //save original color temporarily
-        Color oColor = pixels[i][j].getColor();
-        //set the color to that of the pixel directly across the middle line
-        pixels[i][j].setColor(pixels[pixels.length - 1 - i][j].getColor());
-        //set the color of the bottom pixel to what the top reflected one was originally
-        pixels[pixels.length - 1 - i][j].setColor(oColor);
+        //set the color of the bottom pixel to what the top reflected one is
+        pixels[pixels.length - 1 - i][j].setColor(pixels[i][j].getColor());
       }
     }
   }

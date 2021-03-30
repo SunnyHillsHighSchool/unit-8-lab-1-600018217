@@ -3,7 +3,7 @@ class Main
   /* Main method for testing */
   public static void main(String[] args) 
   {
-    Picture pic = new Picture("beach.jpg");
+    Picture pic = new Picture("caterpillar.jpg");
     pic.reflectVertical();
     pic.write("output.jpg");
   }
