@@ -368,7 +368,28 @@ public class Picture
 
    ////////////////////// methods ///////////////////////////////////////
 
-   
+//Unit 8 Lab 1
+//By Johnathan Mitri
+  public void reflectVertical()
+  {
+    //get the pixel array
+    Pixel[][] pixels = this.getPixels2D();
 
+    //for loop that goes for each row above the middle line
+    for (int i = 0; i < pixels.length/2; i++)
+    {
+      //for loop for every pixel in the row
+      for (int j = 0; j <  pixels[i].length; j++)
+      {
+        //save original color temporarily
+        Color oColor = pixels[i][j].getColor();
+        //set the color to that of the pixel directly across the middle line
+        pixels[i][j].setColor(pixels[pixels.length - 1 - i][j].getColor());
+        //set the color of the bottom pixel to what the top reflected one was originally
+        pixels[pixels.length - 1 - i][j].setColor(oColor);
+      }
+    }
+  }
+   
 
 } // this } is the end of class Picture, put all new methods before this
